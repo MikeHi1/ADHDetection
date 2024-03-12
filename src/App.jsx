@@ -8,26 +8,28 @@ import Footer from './Components/Footer'
 function App() {
   const [count, setCount] = useState(0)
   
-  useEffect(() => {
-   const webgazer = window.webgazer
-    webgazer.setGazeListener(function(data, elapsedTime) {
-      if (data == null) {
-        return;
-      }
-      var xprediction = data.x; //these x coordinates are relative to the viewport
-      var yprediction = data.y; //these y coordinates are relative to the viewport
-      console.log(elapsedTime); //elapsed time is based on time since begin was called
-      console.log(data);
-    }).begin();
-    console.log()
-  }, [])
+  // useEffect(() => {
+  //  const webgazer = window.webgazer
+  //   webgazer.setGazeListener(function(data, elapsedTime) {
+  //     if (data == null) {
+  //       return;
+  //     }
+  //     var xprediction = data.x; //these x coordinates are relative to the viewport
+  //     var yprediction = data.y; //these y coordinates are relative to the viewport
+  //     console.log(elapsedTime); //elapsed time is based on time since begin was called
+  //     console.log(data);
+  //   }).begin();
+  //   console.log()
+  // }, [])
 
   return (
-    <>
+    <div className=''> 
+    {/* margins xaxis adjustment */}
     <Navbar/>
-    <Outlet/>
+    <div className = 'container mx-auto'> <Outlet/></div>
+    {/* dsplays different pages */}
     <Footer/>
-    </>
+    </div>
   )
 }
 
