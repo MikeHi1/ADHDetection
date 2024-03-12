@@ -7,6 +7,8 @@ import {
 import App from './App.jsx'
 import Home from './Pages/Home'
 import Testing from './Pages/Testing'
+import Community from './Pages/Community'
+import About from './Pages/About'
 import './index.css'
 
 const router = createBrowserRouter([
@@ -21,7 +23,15 @@ const router = createBrowserRouter([
       {
         path:"/testing",
         element: <Testing/>
-      }
+      },
+      {
+        path: "/community",
+        element: <Community/>
+      },
+      {
+        path: "/about",
+        element: <About/>
+      },
     ]
   
   },

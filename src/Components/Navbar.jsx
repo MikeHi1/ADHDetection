@@ -61,7 +61,8 @@ export default function Navbar() {
               title="Product pricing"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-brand-tertiary"
             >
-              Community
+              <Link to="/community"> Community </Link>
+              {/* Links to Community using the path (/community) in main.jsx */}
             </a>
           </li>
           <li>
@@ -71,7 +72,8 @@ export default function Navbar() {
               title="About us"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-brand-tertiary"
             >
-              About us
+              <Link to="/about"> About us </Link>
+              {/* Links to about us using the path (/about) in main.jsx */}
             </a>
           </li>
         </ul>
