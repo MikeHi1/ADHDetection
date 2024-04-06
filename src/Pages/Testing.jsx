@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Calibration from '../Components/Testing/Calibration'
 import Test1 from '../Components/Testing/Test1';
 import Test2 from '../Components/Testing/Test2';
@@ -13,6 +13,19 @@ export default function Testing() {
   }
   const [testState, setTestState] = useState(testStates.CALIBRATION)
   
+    useEffect(() => {
+   const webgazer = window.webgazer
+
+      webgazer.setRegression('ridge')
+        .setGazeListener(function (data, elapsedTime) { })
+        .saveDataAcrossSessions(true)
+        .begin();
+      webgazer.showVideoPreview(true)
+        .showPredictionPoints(true)
+        .applyKalmanFilter(true);
+      
+
+  })
 
   return (
     <>
