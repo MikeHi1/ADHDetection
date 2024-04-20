@@ -5,6 +5,8 @@ import './App.css'
 import { Outlet } from "react-router-dom";
 import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
+import { Helmet } from "react-helmet";
+
 function App() {
   const [count, setCount] = useState(0)
   
@@ -24,6 +26,18 @@ function App() {
 
   return (
     <div className=''> 
+    <Helmet>
+        <title>ADHDetection</title>
+        <meta
+          name="description"
+          content="Free ADHD Detection test"
+        />
+        <meta
+          name="keywords"
+          content="ADHD, Test, Detection"
+        />
+      </Helmet>
+
     {/* margins xaxis adjustment */}
     <Navbar/>
     <div className = 'container mx-auto'> <Outlet/></div>

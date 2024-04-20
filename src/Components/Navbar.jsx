@@ -2,6 +2,69 @@ import { useState } from 'react'
 import { Link } from "react-router-dom";
 import Logo from '../assets/logo.svg'
 
+import React from 'react'
+
+function NavItems({isMenuOpen}) {
+  return (
+    <ul className= {`${isMenuOpen ? "" : "hidden" } lg:flex items-start lg:items-center space-x-0 lg:space-x-8 flex-col lg:flex-row`}>
+      <li>
+        <a
+          aria-label="Our product"
+          title="Our product"
+          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-brand-tertiary"
+        >
+          <Link to="/"> Home </Link>
+          {/* Links to Home using the path in main.jsx */}
+        </a>
+      </li>
+      <li>
+        <a
+          href="/"
+          aria-label="Our product"
+          title="Our product"
+          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-brand-tertiary"
+        >
+          <Link to="/testing"> Testing </Link>
+          {/* Links to Testing using the path (/testing) in main.jsx */}
+        </a>
+      </li>
+      <li>
+        <a
+          href="/"
+          aria-label="Product pricing"
+          title="Product pricing"
+          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-brand-tertiary"
+        >
+          <Link to="/community"> Community </Link>
+          {/* Links to Community using the path (/community) in main.jsx */}
+        </a>
+      </li>
+      <li>
+        <a
+          href="/"
+          aria-label="About us"
+          title="About us"
+          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-brand-tertiary"
+        >
+          <Link to="/about"> About us </Link>
+          {/* Links to about us using the path (/about) in main.jsx */}
+        </a>
+      </li>
+      <li className="d-block sm:hidden">
+        <a
+          href="/"
+          className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-brand-secondary hover:bg-brand-tertiary focus:shadow-outline focus:outline-none"
+          aria-label="Sign up"
+          title="Sign up"
+        >
+          Sign up
+        </a>
+      </li>
+    </ul>
+  )
+}
+
+
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -14,54 +77,11 @@ export default function Navbar() {
           title="Company "
           className="inline-flex items-center"
         >
-        <img className="w-48" src={Logo} alt="Logo" />
-        
+          <img className="w-48" src={Logo} alt="Logo" />
+
         </a>
-        <ul className="flex items-center hidden space-x-8 lg:flex">
-          <li>
-            <a
-              aria-label="Our product"
-              title="Our product"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-brand-tertiary"
-            >
-              <Link to="/"> Home </Link> 
-              {/* Links to Home using the path in main.jsx */}
-            </a>
-          </li>
-          <li>
-            <a
-              href="/"
-              aria-label="Our product"
-              title="Our product"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-brand-tertiary"
-            >
-              <Link to="/testing"> Testing </Link> 
-              {/* Links to Testing using the path (/testing) in main.jsx */}
-            </a>
-          </li>
-          <li>
-            <a
-              href="/"
-              aria-label="Product pricing"
-              title="Product pricing"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-brand-tertiary"
-            >
-              <Link to="/community"> Community </Link>
-              {/* Links to Community using the path (/community) in main.jsx */}
-            </a>
-          </li>
-          <li>
-            <a
-              href="/"
-              aria-label="About us"
-              title="About us"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-brand-tertiary"
-            >
-              <Link to="/about"> About us </Link>
-              {/* Links to about us using the path (/about) in main.jsx */}
-            </a>
-          </li>
-        </ul>
+          <NavItems />
+
         <ul className="flex items-center hidden space-x-8 lg:flex">
           <li>
             <a
@@ -74,6 +94,8 @@ export default function Navbar() {
             </a>
           </li>
         </ul>
+
+        {/* Mobile Nav Bar */}
         <div className="lg:hidden">
           <button
             aria-label="Open Menu"
@@ -107,24 +129,7 @@ export default function Navbar() {
                       title="Company"
                       className="inline-flex items-center"
                     >
-                      <svg
-                        className="w-8 text-brand-tertiary"
-                        viewBox="0 0 24 24"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeMiterlimit="10"
-                        stroke="currentColor"
-                        fill="none"
-                      >
-                        <rect x="3" y="1" width="7" height="12" />
-                        <rect x="3" y="17" width="7" height="6" />
-                        <rect x="14" y="1" width="7" height="6" />
-                        <rect x="14" y="11" width="7" height="12" />
-                      </svg>
-                      <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                        Company
-                      </span>
+                      <img className="w-48" src={Logo} alt="Logo" />
                     </a>
                   </div>
                   <div>
@@ -144,58 +149,7 @@ export default function Navbar() {
                   </div>
                 </div>
                 <nav>
-                  <ul className="space-y-4">
-                    <li>
-                      <a
-                        href="/"
-                        aria-label="Our product"
-                        title="Our product"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-brand-tertiary"
-                      >
-                        Product
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/"
-                        aria-label="Our product"
-                        title="Our product"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-brand-tertiary"
-                      >
-                        Features
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/"
-                        aria-label="Product pricing"
-                        title="Product pricing"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-brand-tertiary"
-                      >
-                        Pricing
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/"
-                        aria-label="About us"
-                        title="About us"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-brand-tertiary"
-                      >
-                        About us
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/"
-                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-brand-secondary hover:bg-brand-tertiary focus:shadow-outline focus:outline-none"
-                        aria-label="Sign up"
-                        title="Sign up"
-                      >
-                        Sign up
-                      </a>
-                    </li>
-                  </ul>
+                  <NavItems isMenuOpen={isMenuOpen}/>
                 </nav>
               </div>
             </div>
