@@ -8,7 +8,7 @@ export default function Calibration({ setTestState }) {
     modal.show();
   }
   function handleButtonClick() {
-    setTestState("Test1");
+    setTestState("Test2");
   }
 
   useEffect(() => {
