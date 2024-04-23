@@ -1,0 +1,17 @@
+HTML is about content
+Java Script is behavior (how should it behavior, what should happen if we hover over an element)
+
+The id attribute defines the HTML element
+innerHTML property defines the HTML content
+
+
+
+// To Comment
+
+Statement - console.log('Hello World'); //String
+    Piece of code that expresses an action to be carried out (We want to log a message on the console)
+    
+Attribute: src="index.js" (Tells the browser that the java script is not in "index.js")
+    src - Source
+
+
