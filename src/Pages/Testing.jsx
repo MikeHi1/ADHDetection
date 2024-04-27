@@ -14,15 +14,15 @@ export default function Testing() {
   const [testState, setTestState] = useState(testStates.CALIBRATION)
   
     useEffect(() => {
-   const webgazer = window.webgazer
+  //  const webgazer = window.webgazer
 
-      webgazer.setRegression('ridge')
-        .setGazeListener(function (data, elapsedTime) { })
-        .saveDataAcrossSessions(true)
-        .begin();
-      webgazer.showVideoPreview(true)
-        .showPredictionPoints(true)
-        .applyKalmanFilter(true);
+  //     webgazer.setRegression('ridge')
+  //       .setGazeListener(function (data, elapsedTime) { })
+  //       .saveDataAcrossSessions(true)
+  //       .begin();
+  //     webgazer.showVideoPreview(true)
+  //       .showPredictionPoints(true)
+  //       .applyKalmanFilter(true);
       
 
   })
